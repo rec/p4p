@@ -48,6 +48,7 @@ _POEM_TYPES = {
   },
 }
 
+
 def is_poem_type(poem, poem_type):
   rule = _POEM_TYPES[poem_type]
   if len(poem) != len(rule['syllables']):
@@ -69,6 +70,18 @@ def is_poem_type(poem, poem_type):
       return 'Line %d has %d syllables, which is greater than %d' % (
         line_number, syllable_count, most)
 
+def read_poem_file(poem_file):
+  return open(poem_file).readlines()
 
+def is_poem_type_from_file(poem_file, poem_type):
+  return is_poem_type(read_poem_file(poem_file), poem_type)
 
+def get_poem_type(poem):
+  for t in _POEM_TYPES:
+    if not is_poem_type(poem, t):
+      return t
 
+  raise Exception('This poem is not of a type I know')
+
+def get_poem_type_from_file(poem_file):
+  return get_poem_type(read_poem_file(poem_file))
