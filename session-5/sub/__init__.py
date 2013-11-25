@@ -1,0 +1,1 @@
+NAMES = 'Galileo', 'Newton', 'Einstein'
