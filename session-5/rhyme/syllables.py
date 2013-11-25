@@ -16,4 +16,4 @@ _SYLLABLES_FILE = 'syllables.txt'
 SYLLABLES = _read_syllables(_SYLLABLES_FILE)
 
 def line_syllables(line):
-  return sum(SYLLABLES.get(w, 1) for w in text.split(line))
+  return sum(SYLLABLES.get(w, 1) for w in text.split_into_words(line))

@@ -6,7 +6,7 @@ def _read_rhyme_dictionary(fname):
     for line in f:
       line = line.strip()
       if line:
-        words = set(text.split(line))
+        words = set(text.split_into_words(line))
         for w in words:
           assert w not in rhymes
           rhymes[w] = words
@@ -19,4 +19,4 @@ def words_rhyme(w1, w2):
   return w1 in RHYMES.get(w2, [])
 
 def lines_rhyme(l1, l2):
-  return words_rhyme(text.last(l1), text.last(l2))
+  return words_rhyme(text.last_word(l1), text.last_word(l2))
