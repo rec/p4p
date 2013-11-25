@@ -13,7 +13,7 @@ def _read_syllables(fname):
   return syllables
 
 _SYLLABLES_FILE = 'syllables.txt'
-SYLLABLES = _read_syllables(_SYLLABLES_FILE)
+_SYLLABLES = _read_syllables(_SYLLABLES_FILE)
 
 def line_syllables(line):
-  return sum(SYLLABLES.get(w, 1) for w in text.split_into_words(line))
+  return sum(_SYLLABLES.get(w, 1) for w in text.split_into_words(line))

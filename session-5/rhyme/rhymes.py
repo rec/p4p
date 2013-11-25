@@ -13,10 +13,10 @@ def _read_rhyme_dictionary(fname):
   return rhymes
 
 _RHYME_FILE = 'rhymes.txt'
-RHYMES = _read_rhyme_dictionary(_RHYME_FILE)
+_RHYMES = _read_rhyme_dictionary(_RHYME_FILE)
 
 def words_rhyme(w1, w2):
-  return w1 in RHYMES.get(w2, [])
+  return w1 in _RHYMES.get(w2, [])
 
 def lines_rhyme(l1, l2):
   return words_rhyme(text.last_word(l1), text.last_word(l2))

@@ -1,7 +1,7 @@
 import rhymes
 import syllables
 
-POEM_TYPES = {
+_POEM_TYPES = {
   'limerick':  {
      'rhymes': (
        (0, 1),
@@ -49,7 +49,7 @@ POEM_TYPES = {
 }
 
 def is_poem_type(poem, poem_type):
-  rule = POEM_TYPES[poem_type]
+  rule = _POEM_TYPES[poem_type]
   if len(poem) != len(rule['syllables']):
     return 'Poem has %d lines, not %d' % (
       len(poem), len(rule['syllables']))
