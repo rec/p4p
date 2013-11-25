@@ -1,8 +1,8 @@
 import text
 
-def _read_rhyme_dictionary(fname):
+def _read_rhyme_dictionary(filename):
   rhymes = {}
-  with open(fname) as f:
+  with open(filename) as f:
     for line in f:
       line = line.strip()
       if line:

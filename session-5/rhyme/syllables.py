@@ -1,8 +1,8 @@
 import text
 
-def _read_syllables(fname):
+def _read_syllables(filename):
   syllables = {}
-  with open(fname) as f:
+  with open(filename) as f:
     for line in f:
       line = line.strip()
       if line:
